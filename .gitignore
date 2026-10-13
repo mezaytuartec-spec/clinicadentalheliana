@@ -1,0 +1,16 @@
+node_modules
+dist
+.claude
+.vercel
+
+# Material de trabajo que no usa el sitio (stock descartado y captura de referencia)
+caroline-lm-*.jpg
+Cómo destacar*.jpg
+descarga (36).jpg
+diana-polekhina-*.jpg
+jonathan-borba-*.jpg
+kamal-hoseinianzade-*.jpg
+lesly-juarez-*.jpg
+ozkan-guner-*.jpg
+Smiling young woman*.jpg
+web inspiracion*.jpg

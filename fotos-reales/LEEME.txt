@@ -1,0 +1,7 @@
+Dejá acá las fotos reales y corré:  npm run fotos  &&  npm run og
+
+  doctora.jpg                      retrato de la Dra. Heliana (vertical)
+  consultorio.jpg                  el consultorio
+  caso-1-antes.jpg / caso-1-despues.jpg   ... hasta caso-6 (mismo encuadre)
+
+El sitio las detecta solo: donde no hay foto muestra un espacio de marca.

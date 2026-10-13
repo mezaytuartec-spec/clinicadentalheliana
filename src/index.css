@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Verde petróleo (principal) */
+  --color-petrol-950: #082b2e;
+  --color-petrol-900: #0b3a3d;
+  --color-petrol-800: #0d4448;
+  --color-petrol-700: #135a5d;
+  --color-petrol-600: #1b6f70;
+
+  /* Turquesa / verde agua (acentos) */
+  --color-aqua-600: #1f9a8c;
+  --color-aqua-500: #2fb3a3;
+  --color-aqua-400: #5fd0bf;
+  --color-aqua-200: #b9e9e0;
+  --color-aqua-100: #dcf3ee;
+  --color-aqua-50: #eef9f6;
+
+  /* Cremas */
+  --color-cream-50: #fdfbf7;
+  --color-cream-100: #fbf8f2;
+  --color-cream-200: #f4eee3;
+  --color-cream-300: #e9e0cf;
+
+  --color-ink: #163735;
+  --color-ink-soft: #4b6663;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream-100 font-sans text-ink antialiased;
+    font-feature-settings: 'ss01';
+  }
+  h1, h2, h3 {
+    @apply font-display text-petrol-900;
+    font-variation-settings: 'SOFT' 100, 'WONK' 0;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 2.5px solid var(--color-aqua-500);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+}
+
+@utility eyebrow {
+  @apply text-[0.78rem] font-semibold tracking-[0.16em] uppercase text-aqua-600;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[0.98rem] font-semibold transition duration-200 ease-out active:scale-[0.97];
+}
+@utility btn-wa {
+  @apply btn bg-petrol-800 text-white shadow-[0_10px_30px_-12px_rgb(13_68_72/0.7)] hover:bg-petrol-700;
+}
+@utility btn-ghost {
+  @apply btn bg-white/80 text-petrol-800 ring-1 ring-petrol-800/15 hover:bg-white hover:ring-petrol-800/30;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+@keyframes twinkle { 0%,100% { opacity: .35; transform: scale(.85) } 50% { opacity: 1; transform: scale(1) } }
+.twinkle { animation: twinkle 3.6s ease-in-out infinite; transform-origin: center; }
